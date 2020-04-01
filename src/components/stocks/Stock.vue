@@ -9,10 +9,21 @@
       <div class="card-body">
         <div class="row">
           <div class="col-sm-8">
-            <input type="number" class="form-control" placeholder="Qauntity" />
+            <input
+              type="number"
+              class="form-control"
+              placeholder="Qauntity"
+              v-model="quantity"
+            />
           </div>
           <div class="col-sm-4">
-            <button class="btn btn-success">Buy</button>
+            <button
+              class="btn btn-success"
+              @click="buyStock"
+              :disabled="quantity <= 0"
+            >
+              Buy
+            </button>
           </div>
         </div>
       </div>
@@ -22,6 +33,23 @@
 
 <script>
 export default {
-  props: ["stock"]
+  props: ["stock"],
+  data() {
+    return {
+      quantity: 0
+    };
+  },
+  methods: {
+    buyStock() {
+      const order = {
+        stockId: this.stock.id,
+        stockPrice: this.stock.price,
+        quantity: this.quantity | 0
+      };
+
+      console.log(order);
+      this.quantity = 0;
+    }
+  }
 };
 </script>
