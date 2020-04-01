@@ -1,7 +1,11 @@
 <template>
   <div class="container">
     <app-header />
-    <router-view />
+    <div class="row">
+      <div class="col-xs-12">
+        <router-view />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -14,4 +18,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+body {
+  padding: 30px;
+}
+</style>
