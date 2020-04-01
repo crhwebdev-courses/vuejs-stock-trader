@@ -2,7 +2,6 @@
   <div class="container">
     <app-header />
     <router-view />
-    <button class="btn btn-primary">Click Me!</button>
   </div>
 </template>
 
