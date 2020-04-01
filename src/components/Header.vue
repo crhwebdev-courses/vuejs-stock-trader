@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Header</h1>
+    <h1>The Header Component</h1>
   </div>
 </template>
 
