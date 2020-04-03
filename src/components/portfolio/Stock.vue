@@ -1,32 +1,28 @@
 <template>
-  <div class="col-sm-6 col-md-4">
-    <div class="card">
-      <h3 class="card-header bg-info text-white">
-        {{ stock.name }}
-        <small
-          >(Price: {{ stock.price }} | Quantity: {{ stock.quantity }})</small
-        >
-      </h3>
+  <div class="card stock col-sm-6 col-md-4">
+    <h3 class="card-header bg-info text-white">
+      {{ stock.name }}
+      <small>(Price: {{ stock.price }} | Quantity: {{ stock.quantity }})</small>
+    </h3>
 
-      <div class="card-body">
-        <div class="row">
-          <div class="col-sm-8">
-            <input
-              type="number"
-              class="form-control"
-              placeholder="Qauntity"
-              v-model="quantity"
-            />
-          </div>
-          <div class="col-sm-4">
-            <button
-              class="btn btn-success"
-              @click="sellStock"
-              :disabled="quantity <= 0"
-            >
-              Sell
-            </button>
-          </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-8">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Qauntity"
+            v-model="quantity"
+          />
+        </div>
+        <div class="col-sm-4">
+          <button
+            class="btn btn-success"
+            @click="sellStock"
+            :disabled="quantity <= 0"
+          >
+            Sell
+          </button>
         </div>
       </div>
     </div>
@@ -60,3 +56,8 @@ export default {
   }
 };
 </script>
+<style>
+.stock {
+  min-width: 350px;
+}
+</style>
