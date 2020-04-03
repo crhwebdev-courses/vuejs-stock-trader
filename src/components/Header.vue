@@ -12,7 +12,6 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <router-link
@@ -47,8 +46,17 @@
           </div>
         </li>
       </ul>
+      <strong class="navbar-text navbar-right">Funds: {{ funds }}</strong>
     </div>
   </nav>
 </template>
 
-<script></script>
+<script>
+export default {
+  computed: {
+    funds() {
+      return this.$store.getters.funds;
+    }
+  }
+};
+</script>
