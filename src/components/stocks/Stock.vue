@@ -12,6 +12,7 @@
             <input
               type="number"
               class="form-control"
+              :class="{ danger: insufficentFunds }"
               placeholder="Qauntity"
               v-model="quantity"
             />
@@ -61,3 +62,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.danger {
+  border: 1px solid red;
+}
+</style>
