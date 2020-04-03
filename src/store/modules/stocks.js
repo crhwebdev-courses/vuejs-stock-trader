@@ -12,7 +12,12 @@ const mutations = {
 };
 
 const actions = {
-  buyStock: ({ commit }, order) => {
+  buyStock: ({ commit, rootState }, order) => {
+    // const funds = rootState.portfolio.funds | 0;
+    // const quantity = order.quantity;
+    // const stockPrice = order.stockPrice;
+    // const remainingFunds = funds - quantity * stockPrice;
+
     commit("BUY_STOCK", order);
   },
   initStocks: ({ commit }) => {
