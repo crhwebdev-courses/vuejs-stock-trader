@@ -22,7 +22,7 @@
             @click="sellStock"
             :disabled="insufficientQuantity || quantity <= 0"
           >
-            {{ insufficientQuantity ? "Not Enough Stocks" : "Sell" }}
+            {{ insufficientQuantity ? "Not Enough" : "Sell" }}
           </button>
         </div>
       </div>
