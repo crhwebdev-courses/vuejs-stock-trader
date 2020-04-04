@@ -3,16 +3,22 @@
     <router-link class="navbar-brand" to="/">Stock Trader</router-link>
     <button
       class="navbar-toggler"
+      :class="{ collapsed: !isMenuOpen }"
       type="button"
       data-toggle="collapse"
       data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent"
-      aria-expanded="false"
+      :aria-expanded="!isMenuOpen"
       aria-label="Toggle navigation"
+      @click="isMenuOpen = !isMenuOpen"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div
+      class="collapse navbar-collapse"
+      :class="{ show: isMenuOpen }"
+      id="navbarSupportedContent"
+    >
       <ul class="navbar-nav mr-auto">
         <router-link
           class="nav-item"
@@ -69,6 +75,7 @@ export default {
   data() {
     return {
       isDropdownOpen: false,
+      isMenuOpen: false,
     };
   },
   computed: {
